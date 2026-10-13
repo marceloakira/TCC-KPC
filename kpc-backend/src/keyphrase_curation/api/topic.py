@@ -801,7 +801,7 @@ async def adjudicate_and_save(
         _check_adjudicator_permission(username, topic)
         ac = AnnotationController(topic, username)
         ac.adjudicate(int(cluster_id), int(keyphrase_id), action)
-        boSave = ac.save(task=AnnotationTask.KEYPHRASE_CLUSTERING)
+        boSave = ac.save_adjudication()
     except HTTPException as http_exc:
         raise http_exc
     except Exception as e:

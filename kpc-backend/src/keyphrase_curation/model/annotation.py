@@ -510,10 +510,11 @@ class AdjudicatorAnnotation():
         if action not in ('consent', 'reject'):
             raise ValueError(f'Unknown action: {action}')
         # annotations_not_saved: {keyphrase_id: target_cluster_id}
+        # keyphrase ids must be ints, as stored in the annotation file
         if action == 'consent':
-            self.annotations_not_saved[str(keyphrase_id)] = int(cluster_id)
+            self.annotations_not_saved[int(keyphrase_id)] = int(cluster_id)
         else:
             # thrash cluster: id = cluster_ids_length (last one)
-            self.annotations_not_saved[str(keyphrase_id)] = \
+            self.annotations_not_saved[int(keyphrase_id)] = \
                 int(self.cluster_ids_length)
         return True

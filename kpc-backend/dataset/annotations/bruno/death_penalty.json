@@ -1,0 +1,970 @@
+{
+    "keyphrases": {
+        "1": {
+            "keyphrase": "Deterrence",
+            "collected_from": "chatgpt_pro"
+        },
+        "2": {
+            "keyphrase": "Justice",
+            "collected_from": "chatgpt_pro"
+        },
+        "3": {
+            "keyphrase": "Retribution",
+            "collected_from": "chatgpt_pro"
+        },
+        "4": {
+            "keyphrase": "Public safety",
+            "collected_from": "chatgpt_pro"
+        },
+        "5": {
+            "keyphrase": "Crime prevention",
+            "collected_from": "chatgpt_pro"
+        },
+        "6": {
+            "keyphrase": "Accountability",
+            "collected_from": "chatgpt_pro"
+        },
+        "7": {
+            "keyphrase": "Closure for victims' families",
+            "collected_from": "chatgpt_pro"
+        },
+        "8": {
+            "keyphrase": "Cost-effectiveness",
+            "collected_from": "chatgpt_pro"
+        },
+        "9": {
+            "keyphrase": "Moral retribution",
+            "collected_from": "chatgpt_pro"
+        },
+        "10": {
+            "keyphrase": "Severity of punishment",
+            "collected_from": "chatgpt_pro"
+        },
+        "11": {
+            "keyphrase": "Social order",
+            "collected_from": "chatgpt_pro"
+        },
+        "12": {
+            "keyphrase": "Rehabilitation potential",
+            "collected_from": "chatgpt_pro"
+        },
+        "13": {
+            "keyphrase": "Proportional punishment",
+            "collected_from": "chatgpt_pro"
+        },
+        "14": {
+            "keyphrase": "Recidivism prevention",
+            "collected_from": "chatgpt_pro"
+        },
+        "15": {
+            "keyphrase": "Dissuading potential offenders",
+            "collected_from": "chatgpt_pro"
+        },
+        "16": {
+            "keyphrase": "Protection of innocent lives",
+            "collected_from": "chatgpt_pro"
+        },
+        "17": {
+            "keyphrase": "Restoring faith in the justice system",
+            "collected_from": "chatgpt_pro"
+        },
+        "18": {
+            "keyphrase": "Upholding societal norms",
+            "collected_from": "chatgpt_pro"
+        },
+        "19": {
+            "keyphrase": "Removal of dangerous individuals",
+            "collected_from": "chatgpt_pro"
+        },
+        "20": {
+            "keyphrase": "Symbolic value",
+            "collected_from": "chatgpt_pro"
+        },
+        "21": {
+            "keyphrase": "Human rights",
+            "collected_from": "chatgpt_against"
+        },
+        "22": {
+            "keyphrase": "Cruel and unusual punishment",
+            "collected_from": "chatgpt_against"
+        },
+        "23": {
+            "keyphrase": "Innocence",
+            "collected_from": "chatgpt_against"
+        },
+        "24": {
+            "keyphrase": "Arbitrary application",
+            "collected_from": "chatgpt_against"
+        },
+        "25": {
+            "keyphrase": "Irreversibility",
+            "collected_from": "chatgpt_against"
+        },
+        "26": {
+            "keyphrase": "Discrimination",
+            "collected_from": "chatgpt_against"
+        },
+        "27": {
+            "keyphrase": "Flawed justice system",
+            "collected_from": "chatgpt_against"
+        },
+        "28": {
+            "keyphrase": "Racial bias",
+            "collected_from": "chatgpt_against"
+        },
+        "29": {
+            "keyphrase": "Lack of deterrence",
+            "collected_from": "chatgpt_against"
+        },
+        "30": {
+            "keyphrase": "Violation of international norms",
+            "collected_from": "chatgpt_against"
+        },
+        "31": {
+            "keyphrase": "Rehabilitation opportunity",
+            "collected_from": "chatgpt_against"
+        },
+        "32": {
+            "keyphrase": "Costly and wasteful",
+            "collected_from": "chatgpt_against"
+        },
+        "33": {
+            "keyphrase": "Moral objections",
+            "collected_from": "chatgpt_against"
+        },
+        "34": {
+            "keyphrase": "Systemic injustice",
+            "collected_from": "chatgpt_against"
+        },
+        "35": {
+            "keyphrase": "Focus on prevention and rehabilitation",
+            "collected_from": "chatgpt_against"
+        },
+        "36": {
+            "keyphrase": "Disproportionate impact on marginalized communities",
+            "collected_from": "chatgpt_against"
+        },
+        "37": {
+            "keyphrase": "Human fallibility",
+            "collected_from": "chatgpt_against"
+        },
+        "38": {
+            "keyphrase": "Dehumanization",
+            "collected_from": "chatgpt_against"
+        },
+        "39": {
+            "keyphrase": "Violation of the right to life",
+            "collected_from": "chatgpt_against"
+        },
+        "40": {
+            "keyphrase": "Possibility of executing the innocent",
+            "collected_from": "chatgpt_against"
+        },
+        "41": {
+            "keyphrase": "Amnesty International",
+            "collected_from": "chatgpt_ne"
+        },
+        "42": {
+            "keyphrase": "Human Rights Watch",
+            "collected_from": "chatgpt_ne"
+        },
+        "43": {
+            "keyphrase": "United Nations",
+            "collected_from": "chatgpt_ne"
+        },
+        "44": {
+            "keyphrase": "American Civil Liberties Union (ACLU)",
+            "collected_from": "chatgpt_ne"
+        },
+        "45": {
+            "keyphrase": "Innocence Project",
+            "collected_from": "chatgpt_ne"
+        },
+        "46": {
+            "keyphrase": "Death Penalty Information Center",
+            "collected_from": "chatgpt_ne"
+        },
+        "47": {
+            "keyphrase": "Supreme Court",
+            "collected_from": "chatgpt_ne"
+        },
+        "48": {
+            "keyphrase": "International Court of Justice",
+            "collected_from": "chatgpt_ne"
+        },
+        "49": {
+            "keyphrase": "National Coalition to Abolish the Death Penalty",
+            "collected_from": "chatgpt_ne"
+        },
+        "50": {
+            "keyphrase": "Capital punishment researchers/scholars",
+            "collected_from": "chatgpt_ne"
+        },
+        "51": {
+            "keyphrase": "Victims' rights organizations",
+            "collected_from": "chatgpt_ne"
+        },
+        "52": {
+            "keyphrase": "Criminal defense lawyers",
+            "collected_from": "chatgpt_ne"
+        },
+        "53": {
+            "keyphrase": "Prosecutors",
+            "collected_from": "chatgpt_ne"
+        },
+        "54": {
+            "keyphrase": "State Departments of Corrections",
+            "collected_from": "chatgpt_ne"
+        },
+        "55": {
+            "keyphrase": "U.S. Department of Justice",
+            "collected_from": "chatgpt_ne"
+        },
+        "56": {
+            "keyphrase": "Law enforcement agencies",
+            "collected_from": "chatgpt_ne"
+        },
+        "57": {
+            "keyphrase": "State legislatures",
+            "collected_from": "chatgpt_ne"
+        },
+        "58": {
+            "keyphrase": "Religious organizations",
+            "collected_from": "chatgpt_ne"
+        },
+        "59": {
+            "keyphrase": "Bar associations",
+            "collected_from": "chatgpt_ne"
+        },
+        "60": {
+            "keyphrase": "Media outlets/journalists",
+            "collected_from": "chatgpt_ne"
+        },
+        "61": {
+            "keyphrase": "deterrence",
+            "collected_from": "keybert"
+        },
+        "62": {
+            "keyphrase": "homicides",
+            "collected_from": "keybert"
+        },
+        "63": {
+            "keyphrase": "criminology",
+            "collected_from": "keybert"
+        },
+        "64": {
+            "keyphrase": "deterrent",
+            "collected_from": "keybert"
+        },
+        "65": {
+            "keyphrase": "criminality",
+            "collected_from": "keybert"
+        },
+        "66": {
+            "keyphrase": "homicidesurvivors",
+            "collected_from": "keybert"
+        },
+        "67": {
+            "keyphrase": "homicide",
+            "collected_from": "keybert"
+        },
+        "68": {
+            "keyphrase": "punishment",
+            "collected_from": "keybert"
+        },
+        "69": {
+            "keyphrase": "executions",
+            "collected_from": "keybert"
+        },
+        "70": {
+            "keyphrase": "murder",
+            "collected_from": "keybert"
+        },
+        "71": {
+            "keyphrase": "crime",
+            "collected_from": "keybert"
+        },
+        "72": {
+            "keyphrase": "murderers",
+            "collected_from": "keybert"
+        },
+        "73": {
+            "keyphrase": "case_against_death",
+            "collected_from": "keybert"
+        },
+        "74": {
+            "keyphrase": "murderer",
+            "collected_from": "keybert"
+        },
+        "75": {
+            "keyphrase": "crimes",
+            "collected_from": "keybert"
+        },
+        "76": {
+            "keyphrase": "murders",
+            "collected_from": "keybert"
+        },
+        "77": {
+            "keyphrase": "punishments",
+            "collected_from": "keybert"
+        },
+        "78": {
+            "keyphrase": "fatalities",
+            "collected_from": "keybert"
+        },
+        "79": {
+            "keyphrase": "humaneness",
+            "collected_from": "keybert"
+        },
+        "80": {
+            "keyphrase": "convict",
+            "collected_from": "keybert"
+        },
+        "81": {
+            "keyphrase": "assassinations",
+            "collected_from": "keybert"
+        },
+        "82": {
+            "keyphrase": "murdering",
+            "collected_from": "keybert"
+        },
+        "83": {
+            "keyphrase": "perpetrators",
+            "collected_from": "keybert"
+        },
+        "84": {
+            "keyphrase": "manslaughter",
+            "collected_from": "keybert"
+        },
+        "85": {
+            "keyphrase": "what_is_death_row_syndrome",
+            "collected_from": "keybert"
+        },
+        "86": {
+            "keyphrase": "convicting",
+            "collected_from": "keybert"
+        },
+        "87": {
+            "keyphrase": "assassination",
+            "collected_from": "keybert"
+        },
+        "88": {
+            "keyphrase": "euthanasia",
+            "collected_from": "keybert"
+        },
+        "89": {
+            "keyphrase": "imprisonment",
+            "collected_from": "keybert"
+        },
+        "90": {
+            "keyphrase": "criminals",
+            "collected_from": "keybert"
+        },
+        "91": {
+            "keyphrase": "morality",
+            "collected_from": "keybert"
+        },
+        "92": {
+            "keyphrase": "incarceration",
+            "collected_from": "keybert"
+        },
+        "93": {
+            "keyphrase": "incarcerating",
+            "collected_from": "keybert"
+        },
+        "94": {
+            "keyphrase": "punishing",
+            "collected_from": "keybert"
+        },
+        "95": {
+            "keyphrase": "violence",
+            "collected_from": "keybert"
+        },
+        "96": {
+            "keyphrase": "lethal",
+            "collected_from": "keybert"
+        },
+        "97": {
+            "keyphrase": "prosecutes",
+            "collected_from": "keybert"
+        },
+        "98": {
+            "keyphrase": "sentencing",
+            "collected_from": "keybert"
+        },
+        "99": {
+            "keyphrase": "punish",
+            "collected_from": "keybert"
+        },
+        "100": {
+            "keyphrase": "punishes",
+            "collected_from": "keybert"
+        },
+        "101": {
+            "keyphrase": "death_penalty",
+            "collected_from": "yake"
+        },
+        "102": {
+            "keyphrase": "Death_Penalty_Support",
+            "collected_from": "yake"
+        },
+        "103": {
+            "keyphrase": "Death_Penalty_Cases",
+            "collected_from": "yake"
+        },
+        "104": {
+            "keyphrase": "Death_Penalty_Information",
+            "collected_from": "yake"
+        },
+        "105": {
+            "keyphrase": "death",
+            "collected_from": "yake"
+        },
+        "106": {
+            "keyphrase": "death_penalty_laws",
+            "collected_from": "yake"
+        },
+        "107": {
+            "keyphrase": "State_Death_Penalty",
+            "collected_from": "yake"
+        },
+        "108": {
+            "keyphrase": "death_penalty_states",
+            "collected_from": "yake"
+        },
+        "109": {
+            "keyphrase": "penalty",
+            "collected_from": "yake"
+        },
+        "110": {
+            "keyphrase": "Death_Penalty_Page",
+            "collected_from": "yake"
+        },
+        "111": {
+            "keyphrase": "death_penalty_system",
+            "collected_from": "yake"
+        },
+        "112": {
+            "keyphrase": "Death_Penalty_Remains",
+            "collected_from": "yake"
+        },
+        "113": {
+            "keyphrase": "capital_punishment",
+            "collected_from": "yake"
+        },
+        "114": {
+            "keyphrase": "California_Death_Penalty",
+            "collected_from": "yake"
+        },
+        "115": {
+            "keyphrase": "death_row",
+            "collected_from": "yake"
+        },
+        "116": {
+            "keyphrase": "anti_death_penalty",
+            "collected_from": "yake"
+        },
+        "117": {
+            "keyphrase": "death_penalty_deters",
+            "collected_from": "yake"
+        },
+        "118": {
+            "keyphrase": "Supreme_Court",
+            "collected_from": "yake"
+        },
+        "119": {
+            "keyphrase": "death_penalty_arguments",
+            "collected_from": "yake"
+        },
+        "120": {
+            "keyphrase": "Supports_Death_Penalty",
+            "collected_from": "yake"
+        },
+        "121": {
+            "keyphrase": "American_death_penalty",
+            "collected_from": "yake"
+        },
+        "122": {
+            "keyphrase": "state_Supreme_Court",
+            "collected_from": "yake"
+        },
+        "123": {
+            "keyphrase": "death_penalty_opponents",
+            "collected_from": "yake"
+        },
+        "124": {
+            "keyphrase": "federal_death_penalty",
+            "collected_from": "yake"
+        },
+        "125": {
+            "keyphrase": "California_Supreme_Court",
+            "collected_from": "yake"
+        },
+        "126": {
+            "keyphrase": "Penalty_Information_Center",
+            "collected_from": "yake"
+        },
+        "127": {
+            "keyphrase": "death_penalty_costs",
+            "collected_from": "yake"
+        },
+        "128": {
+            "keyphrase": "Supreme_Court_Justice",
+            "collected_from": "yake"
+        },
+        "129": {
+            "keyphrase": "juvenile_death_penalty",
+            "collected_from": "yake"
+        },
+        "130": {
+            "keyphrase": "Death_penalty_proponents",
+            "collected_from": "yake"
+        },
+        "131": {
+            "keyphrase": "death_penalty_poll",
+            "collected_from": "yake"
+        },
+        "132": {
+            "keyphrase": "Florida_Death_Penalty",
+            "collected_from": "yake"
+        },
+        "133": {
+            "keyphrase": "support_capital_punishment",
+            "collected_from": "yake"
+        },
+        "134": {
+            "keyphrase": "pro_death_penalty",
+            "collected_from": "yake"
+        },
+        "135": {
+            "keyphrase": "United_States_Supreme",
+            "collected_from": "yake"
+        },
+        "136": {
+            "keyphrase": "UNITED_STATES",
+            "collected_from": "yake"
+        },
+        "137": {
+            "keyphrase": "death_penalty_found",
+            "collected_from": "yake"
+        },
+        "138": {
+            "keyphrase": "national_death_penalty",
+            "collected_from": "yake"
+        },
+        "139": {
+            "keyphrase": "Death_Penalty_Drug",
+            "collected_from": "yake"
+        },
+        "140": {
+            "keyphrase": "Texas_death_penalty",
+            "collected_from": "yake"
+        }
+    },
+    "clusters": {
+        "1": {
+            "keyphrases": [
+                6,
+                2
+            ],
+            "selected": 1,
+            "keyphrase1_selected": 2,
+            "keyphrase2_selected": 0,
+            "alias": "justice"
+        },
+        "2": {
+            "keyphrases": [
+                44,
+                49,
+                116,
+                123
+            ],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "3": {
+            "keyphrases": [
+                1,
+                15,
+                29,
+                61,
+                64
+            ],
+            "selected": 1,
+            "keyphrase1_selected": 1,
+            "keyphrase2_selected": 0,
+            "alias": "deterrence"
+        },
+        "4": {
+            "keyphrases": [
+                3,
+                9,
+                10,
+                13
+            ],
+            "selected": 1,
+            "keyphrase1_selected": 3,
+            "keyphrase2_selected": 13,
+            "alias": "retribution"
+        },
+        "5": {
+            "keyphrases": [
+                68,
+                98,
+                109
+            ],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "6": {
+            "keyphrases": [
+                4,
+                16,
+                19
+            ],
+            "selected": 1,
+            "keyphrase1_selected": 4,
+            "keyphrase2_selected": 16,
+            "alias": "public_safety"
+        },
+        "7": {
+            "keyphrases": [
+                5,
+                14
+            ],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "8": {
+            "keyphrases": [
+                12,
+                31,
+                35
+            ],
+            "selected": 1,
+            "keyphrase1_selected": 12,
+            "keyphrase2_selected": 0,
+            "alias": "rehabilitation"
+        },
+        "9": {
+            "keyphrases": [
+                11,
+                18,
+                20
+            ],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "10": {
+            "keyphrases": [
+                7,
+                51
+            ],
+            "selected": 1,
+            "keyphrase1_selected": 7,
+            "keyphrase2_selected": 51,
+            "alias": "victims"
+        },
+        "11": {
+            "keyphrases": [
+                8,
+                32,
+                127
+            ],
+            "selected": 1,
+            "keyphrase1_selected": 8,
+            "keyphrase2_selected": 127,
+            "alias": "cost"
+        },
+        "12": {
+            "keyphrases": [
+                23,
+                25,
+                37,
+                40,
+                45
+            ],
+            "selected": 1,
+            "keyphrase1_selected": 23,
+            "keyphrase2_selected": 25,
+            "alias": "innocence_and_irreversibility"
+        },
+        "13": {
+            "keyphrases": [
+                17,
+                24,
+                27,
+                34
+            ],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "14": {
+            "keyphrases": [
+                26,
+                28,
+                36
+            ],
+            "selected": 1,
+            "keyphrase1_selected": 26,
+            "keyphrase2_selected": 28,
+            "alias": "discrimination"
+        },
+        "15": {
+            "keyphrases": [
+                21,
+                39,
+                41,
+                42
+            ],
+            "selected": 1,
+            "keyphrase1_selected": 21,
+            "keyphrase2_selected": 41,
+            "alias": "human_rights"
+        },
+        "16": {
+            "keyphrases": [
+                30,
+                43,
+                48
+            ],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "17": {
+            "keyphrases": [
+                22,
+                38,
+                79
+            ],
+            "selected": 1,
+            "keyphrase1_selected": 79,
+            "keyphrase2_selected": 0,
+            "alias": "humaneness"
+        },
+        "18": {
+            "keyphrases": [
+                33,
+                91
+            ],
+            "selected": 1,
+            "keyphrase1_selected": 91,
+            "keyphrase2_selected": 0,
+            "alias": "morality"
+        },
+        "19": {
+            "keyphrases": [
+                47,
+                103,
+                118,
+                122,
+                125,
+                128
+            ],
+            "selected": 1,
+            "keyphrase1_selected": 47,
+            "keyphrase2_selected": 103,
+            "alias": "courts"
+        },
+        "20": {
+            "keyphrases": [
+                57,
+                106,
+                129
+            ],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "21": {
+            "keyphrases": [
+                52,
+                53,
+                59
+            ],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "22": {
+            "keyphrases": [
+                54,
+                55,
+                56
+            ],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "23": {
+            "keyphrases": [
+                46,
+                50,
+                63,
+                104
+            ],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "24": {
+            "keyphrases": [
+                58,
+                60
+            ],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "25": {
+            "keyphrases": [
+                102,
+                130,
+                131,
+                134
+            ],
+            "selected": 1,
+            "keyphrase1_selected": 102,
+            "keyphrase2_selected": 131,
+            "alias": "public_opinion"
+        },
+        "26": {
+            "keyphrases": [
+                107,
+                108,
+                114,
+                124,
+                132,
+                136,
+                138,
+                140,
+                121
+            ],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "27": {
+            "keyphrases": [
+                101,
+                111,
+                113,
+                119
+            ],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "28": {
+            "keyphrases": [
+                67,
+                70,
+                78,
+                84,
+                87,
+                88,
+                105
+            ],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "29": {
+            "keyphrases": [
+                65,
+                71,
+                95
+            ],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "30": {
+            "keyphrases": [
+                74,
+                80,
+                83,
+                90
+            ],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "31": {
+            "keyphrases": [
+                69,
+                115,
+                139
+            ],
+            "selected": 1,
+            "keyphrase1_selected": 69,
+            "keyphrase2_selected": 115,
+            "alias": "execution_and_death_row"
+        },
+        "32": {
+            "keyphrases": [
+                89,
+                92
+            ],
+            "selected": 1,
+            "keyphrase1_selected": 89,
+            "keyphrase2_selected": 0,
+            "alias": "imprisonment"
+        },
+        "33": {
+            "keyphrases": [
+                62,
+                66,
+                72,
+                73,
+                75,
+                76,
+                77,
+                81,
+                82,
+                85,
+                86,
+                93,
+                94,
+                96,
+                97,
+                99,
+                100,
+                110,
+                112,
+                117,
+                120,
+                126,
+                133,
+                135,
+                137
+            ],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        }
+    }
+}

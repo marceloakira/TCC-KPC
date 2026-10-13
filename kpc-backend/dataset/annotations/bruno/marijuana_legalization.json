@@ -1,0 +1,797 @@
+{
+    "keyphrases": {
+        "1": {
+            "keyphrase": "Medicinal benefits",
+            "collected_from": "chatgpt_pro"
+        },
+        "2": {
+            "keyphrase": "Economic growth",
+            "collected_from": "chatgpt_pro"
+        },
+        "3": {
+            "keyphrase": "Tax revenue",
+            "collected_from": "chatgpt_pro"
+        },
+        "4": {
+            "keyphrase": "Job creation",
+            "collected_from": "chatgpt_pro"
+        },
+        "5": {
+            "keyphrase": "Criminal justice reform",
+            "collected_from": "chatgpt_pro"
+        },
+        "6": {
+            "keyphrase": "Individual freedom",
+            "collected_from": "chatgpt_pro"
+        },
+        "7": {
+            "keyphrase": "Reduction of opioid use",
+            "collected_from": "chatgpt_pro"
+        },
+        "8": {
+            "keyphrase": "Regulation and control",
+            "collected_from": "chatgpt_pro"
+        },
+        "9": {
+            "keyphrase": "Safety and quality control",
+            "collected_from": "chatgpt_pro"
+        },
+        "10": {
+            "keyphrase": "Social equity",
+            "collected_from": "chatgpt_pro"
+        },
+        "11": {
+            "keyphrase": "Medical research opportunities",
+            "collected_from": "chatgpt_pro"
+        },
+        "12": {
+            "keyphrase": "Alternative medicine option",
+            "collected_from": "chatgpt_pro"
+        },
+        "13": {
+            "keyphrase": "Alleviation of chronic pain",
+            "collected_from": "chatgpt_pro"
+        },
+        "14": {
+            "keyphrase": "Treatment for specific conditions (e.g., epilepsy)",
+            "collected_from": "chatgpt_pro"
+        },
+        "15": {
+            "keyphrase": "Cost savings in law enforcement",
+            "collected_from": "chatgpt_pro"
+        },
+        "16": {
+            "keyphrase": "Reducing drug-related violence",
+            "collected_from": "chatgpt_pro"
+        },
+        "17": {
+            "keyphrase": "Consumer choice",
+            "collected_from": "chatgpt_pro"
+        },
+        "18": {
+            "keyphrase": "Harm reduction",
+            "collected_from": "chatgpt_pro"
+        },
+        "19": {
+            "keyphrase": "Tourism and industry boost",
+            "collected_from": "chatgpt_pro"
+        },
+        "20": {
+            "keyphrase": "Less burden on the judicial system",
+            "collected_from": "chatgpt_pro"
+        },
+        "21": {
+            "keyphrase": "Health risks",
+            "collected_from": "chatgpt_against"
+        },
+        "22": {
+            "keyphrase": "Increased drug abuse",
+            "collected_from": "chatgpt_against"
+        },
+        "23": {
+            "keyphrase": "Impaired cognitive function",
+            "collected_from": "chatgpt_against"
+        },
+        "24": {
+            "keyphrase": "Addiction potential",
+            "collected_from": "chatgpt_against"
+        },
+        "25": {
+            "keyphrase": "Gateway drug",
+            "collected_from": "chatgpt_against"
+        },
+        "26": {
+            "keyphrase": "Public safety concerns",
+            "collected_from": "chatgpt_against"
+        },
+        "27": {
+            "keyphrase": "Impaired driving",
+            "collected_from": "chatgpt_against"
+        },
+        "28": {
+            "keyphrase": "Workplace productivity decline",
+            "collected_from": "chatgpt_against"
+        },
+        "29": {
+            "keyphrase": "Negative effects on youth",
+            "collected_from": "chatgpt_against"
+        },
+        "30": {
+            "keyphrase": "Mental health risks",
+            "collected_from": "chatgpt_against"
+        },
+        "31": {
+            "keyphrase": "Increased emergency room visits",
+            "collected_from": "chatgpt_against"
+        },
+        "32": {
+            "keyphrase": "Secondhand smoke exposure",
+            "collected_from": "chatgpt_against"
+        },
+        "33": {
+            "keyphrase": "Conflict with federal law",
+            "collected_from": "chatgpt_against"
+        },
+        "34": {
+            "keyphrase": "Decreased academic performance",
+            "collected_from": "chatgpt_against"
+        },
+        "35": {
+            "keyphrase": "Higher dropout rates",
+            "collected_from": "chatgpt_against"
+        },
+        "36": {
+            "keyphrase": "Social and moral concerns",
+            "collected_from": "chatgpt_against"
+        },
+        "37": {
+            "keyphrase": "Decreased motivation and ambition",
+            "collected_from": "chatgpt_against"
+        },
+        "38": {
+            "keyphrase": "Negative impact on communities",
+            "collected_from": "chatgpt_against"
+        },
+        "39": {
+            "keyphrase": "Black market persistence",
+            "collected_from": "chatgpt_against"
+        },
+        "40": {
+            "keyphrase": "Taxpayer burden for regulation and enforcement",
+            "collected_from": "chatgpt_against"
+        },
+        "41": {
+            "keyphrase": "United States",
+            "collected_from": "chatgpt_ne"
+        },
+        "42": {
+            "keyphrase": "Canada",
+            "collected_from": "chatgpt_ne"
+        },
+        "43": {
+            "keyphrase": "California",
+            "collected_from": "chatgpt_ne"
+        },
+        "44": {
+            "keyphrase": "Colorado",
+            "collected_from": "chatgpt_ne"
+        },
+        "45": {
+            "keyphrase": "Washington",
+            "collected_from": "chatgpt_ne"
+        },
+        "46": {
+            "keyphrase": "Oregon",
+            "collected_from": "chatgpt_ne"
+        },
+        "47": {
+            "keyphrase": "Uruguay",
+            "collected_from": "chatgpt_ne"
+        },
+        "48": {
+            "keyphrase": "Netherlands",
+            "collected_from": "chatgpt_ne"
+        },
+        "49": {
+            "keyphrase": "Portugal",
+            "collected_from": "chatgpt_ne"
+        },
+        "50": {
+            "keyphrase": "Mexico",
+            "collected_from": "chatgpt_ne"
+        },
+        "51": {
+            "keyphrase": "Alcohol and Tobacco industries",
+            "collected_from": "chatgpt_ne"
+        },
+        "52": {
+            "keyphrase": "Pharmaceutical companies",
+            "collected_from": "chatgpt_ne"
+        },
+        "53": {
+            "keyphrase": "Medical professionals",
+            "collected_from": "chatgpt_ne"
+        },
+        "54": {
+            "keyphrase": "Law enforcement agencies",
+            "collected_from": "chatgpt_ne"
+        },
+        "55": {
+            "keyphrase": "Federal government",
+            "collected_from": "chatgpt_ne"
+        },
+        "56": {
+            "keyphrase": "State governments",
+            "collected_from": "chatgpt_ne"
+        },
+        "57": {
+            "keyphrase": "Marijuana dispensaries",
+            "collected_from": "chatgpt_ne"
+        },
+        "58": {
+            "keyphrase": "Marijuana growers",
+            "collected_from": "chatgpt_ne"
+        },
+        "59": {
+            "keyphrase": "Marijuana users",
+            "collected_from": "chatgpt_ne"
+        },
+        "60": {
+            "keyphrase": "Advocacy groups (e.g., NORML, Marijuana Policy Project)",
+            "collected_from": "chatgpt_ne"
+        },
+        "61": {
+            "keyphrase": "cannabinoid",
+            "collected_from": "keybert"
+        },
+        "62": {
+            "keyphrase": "prescription",
+            "collected_from": "keybert"
+        },
+        "63": {
+            "keyphrase": "narcotics",
+            "collected_from": "keybert"
+        },
+        "64": {
+            "keyphrase": "tetrahydrocannabinol",
+            "collected_from": "keybert"
+        },
+        "65": {
+            "keyphrase": "marijuanaproducts",
+            "collected_from": "keybert"
+        },
+        "66": {
+            "keyphrase": "cannabinoids",
+            "collected_from": "keybert"
+        },
+        "67": {
+            "keyphrase": "prescriptions",
+            "collected_from": "keybert"
+        },
+        "68": {
+            "keyphrase": "marijuanatopia",
+            "collected_from": "keybert"
+        },
+        "69": {
+            "keyphrase": "marijuanaright",
+            "collected_from": "keybert"
+        },
+        "70": {
+            "keyphrase": "drug",
+            "collected_from": "keybert"
+        },
+        "71": {
+            "keyphrase": "drugs",
+            "collected_from": "keybert"
+        },
+        "72": {
+            "keyphrase": "methadone",
+            "collected_from": "keybert"
+        },
+        "73": {
+            "keyphrase": "prescribed",
+            "collected_from": "keybert"
+        },
+        "74": {
+            "keyphrase": "smokingweed",
+            "collected_from": "keybert"
+        },
+        "75": {
+            "keyphrase": "narcotic",
+            "collected_from": "keybert"
+        },
+        "76": {
+            "keyphrase": "opiate",
+            "collected_from": "keybert"
+        },
+        "77": {
+            "keyphrase": "marijuanainside",
+            "collected_from": "keybert"
+        },
+        "78": {
+            "keyphrase": "intoxication",
+            "collected_from": "keybert"
+        },
+        "79": {
+            "keyphrase": "drugeducation",
+            "collected_from": "keybert"
+        },
+        "80": {
+            "keyphrase": "medicinal",
+            "collected_from": "keybert"
+        },
+        "81": {
+            "keyphrase": "drugpolicy",
+            "collected_from": "keybert"
+        },
+        "82": {
+            "keyphrase": "nicotine",
+            "collected_from": "keybert"
+        },
+        "83": {
+            "keyphrase": "prescribing",
+            "collected_from": "keybert"
+        },
+        "84": {
+            "keyphrase": "intoxicated",
+            "collected_from": "keybert"
+        },
+        "85": {
+            "keyphrase": "drugabuse",
+            "collected_from": "keybert"
+        },
+        "86": {
+            "keyphrase": "marihuana",
+            "collected_from": "keybert"
+        },
+        "87": {
+            "keyphrase": "cannabis",
+            "collected_from": "keybert"
+        },
+        "88": {
+            "keyphrase": "opiates",
+            "collected_from": "keybert"
+        },
+        "89": {
+            "keyphrase": "marijuana_files",
+            "collected_from": "keybert"
+        },
+        "90": {
+            "keyphrase": "endocannabinoid",
+            "collected_from": "keybert"
+        },
+        "91": {
+            "keyphrase": "psychoactive",
+            "collected_from": "keybert"
+        },
+        "92": {
+            "keyphrase": "intoxicants",
+            "collected_from": "keybert"
+        },
+        "93": {
+            "keyphrase": "weed",
+            "collected_from": "keybert"
+        },
+        "94": {
+            "keyphrase": "medication",
+            "collected_from": "keybert"
+        },
+        "95": {
+            "keyphrase": "overdose",
+            "collected_from": "keybert"
+        },
+        "96": {
+            "keyphrase": "endocannabinoids",
+            "collected_from": "keybert"
+        },
+        "97": {
+            "keyphrase": "drugged",
+            "collected_from": "keybert"
+        },
+        "98": {
+            "keyphrase": "prophylactic",
+            "collected_from": "keybert"
+        },
+        "99": {
+            "keyphrase": "sobriety",
+            "collected_from": "keybert"
+        },
+        "100": {
+            "keyphrase": "teens_marijuana_brochure",
+            "collected_from": "keybert"
+        },
+        "101": {
+            "keyphrase": "Drug_Control_Policy",
+            "collected_from": "yake"
+        },
+        "102": {
+            "keyphrase": "marijuana",
+            "collected_from": "yake"
+        },
+        "103": {
+            "keyphrase": "Drug_Policy",
+            "collected_from": "yake"
+        },
+        "104": {
+            "keyphrase": "National_Drug_Control",
+            "collected_from": "yake"
+        },
+        "105": {
+            "keyphrase": "Drug",
+            "collected_from": "yake"
+        },
+        "106": {
+            "keyphrase": "medical_marijuana",
+            "collected_from": "yake"
+        },
+        "107": {
+            "keyphrase": "marijuana_legalization",
+            "collected_from": "yake"
+        },
+        "108": {
+            "keyphrase": "Drug_Policy_Alliance",
+            "collected_from": "yake"
+        },
+        "109": {
+            "keyphrase": "drugs",
+            "collected_from": "yake"
+        },
+        "110": {
+            "keyphrase": "Marijuana_Policy_Project",
+            "collected_from": "yake"
+        },
+        "111": {
+            "keyphrase": "Drug_Free_Australia",
+            "collected_from": "yake"
+        },
+        "112": {
+            "keyphrase": "Drug_Policy_Foundation",
+            "collected_from": "yake"
+        },
+        "113": {
+            "keyphrase": "National_Drug",
+            "collected_from": "yake"
+        },
+        "114": {
+            "keyphrase": "drug_policy_reform",
+            "collected_from": "yake"
+        },
+        "115": {
+            "keyphrase": "legalizing_marijuana",
+            "collected_from": "yake"
+        },
+        "116": {
+            "keyphrase": "United_States_Drug",
+            "collected_from": "yake"
+        },
+        "117": {
+            "keyphrase": "drug_legalization",
+            "collected_from": "yake"
+        },
+        "118": {
+            "keyphrase": "Drug_Control",
+            "collected_from": "yake"
+        },
+        "119": {
+            "keyphrase": "national_Marijuana_Policy",
+            "collected_from": "yake"
+        },
+        "120": {
+            "keyphrase": "Drug_Abuse",
+            "collected_from": "yake"
+        },
+        "121": {
+            "keyphrase": "drugs_make_marijuana",
+            "collected_from": "yake"
+        },
+        "122": {
+            "keyphrase": "drug_law_reform",
+            "collected_from": "yake"
+        },
+        "123": {
+            "keyphrase": "Medical_Marijuana_States",
+            "collected_from": "yake"
+        },
+        "124": {
+            "keyphrase": "United_States",
+            "collected_from": "yake"
+        },
+        "125": {
+            "keyphrase": "Marijuana_Policy",
+            "collected_from": "yake"
+        },
+        "126": {
+            "keyphrase": "drug_laws",
+            "collected_from": "yake"
+        },
+        "127": {
+            "keyphrase": "illegal_drugs",
+            "collected_from": "yake"
+        },
+        "128": {
+            "keyphrase": "Swedish_drug_policy",
+            "collected_from": "yake"
+        },
+        "129": {
+            "keyphrase": "Transform_Drug_Policy",
+            "collected_from": "yake"
+        },
+        "130": {
+            "keyphrase": "Marijuana_Laws",
+            "collected_from": "yake"
+        },
+        "131": {
+            "keyphrase": "National_Drug_Policy",
+            "collected_from": "yake"
+        },
+        "132": {
+            "keyphrase": "Legalization",
+            "collected_from": "yake"
+        },
+        "133": {
+            "keyphrase": "Drug_Policy_Research",
+            "collected_from": "yake"
+        },
+        "134": {
+            "keyphrase": "legalizing_drugs",
+            "collected_from": "yake"
+        },
+        "135": {
+            "keyphrase": "Drug_War",
+            "collected_from": "yake"
+        },
+        "136": {
+            "keyphrase": "illicit_drug",
+            "collected_from": "yake"
+        },
+        "137": {
+            "keyphrase": "Drug_Free",
+            "collected_from": "yake"
+        },
+        "138": {
+            "keyphrase": "national_drug_strategy",
+            "collected_from": "yake"
+        },
+        "139": {
+            "keyphrase": "States_Drug_Enforcement",
+            "collected_from": "yake"
+        },
+        "140": {
+            "keyphrase": "Drug_Enforcement_Administration",
+            "collected_from": "yake"
+        }
+    },
+    "clusters": {
+        "1": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "2": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "3": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "4": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "5": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "6": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "7": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "8": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "9": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "10": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "11": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "12": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "13": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "14": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "15": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "16": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "17": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "18": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "19": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "20": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "21": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "22": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "23": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "24": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "25": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "26": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "27": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "28": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "29": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "30": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "31": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "32": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        },
+        "33": {
+            "keyphrases": [],
+            "selected": 0,
+            "keyphrase1_selected": 0,
+            "keyphrase2_selected": 0,
+            "alias": ""
+        }
+    }
+}
