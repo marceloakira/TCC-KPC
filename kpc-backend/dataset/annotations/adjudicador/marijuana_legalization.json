@@ -573,8 +573,8 @@
         },
         "2": {
             "keyphrases": [
-                54,
-                139
+                139,
+                54
             ],
             "selected": 0,
             "keyphrase1_selected": 0,
@@ -951,10 +951,10 @@
                 117,
                 132,
                 134,
-                76,
                 88,
                 121,
-                59
+                59,
+                76
             ],
             "selected": 0,
             "keyphrase1_selected": 0,
