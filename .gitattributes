@@ -1,0 +1,4 @@
+# Arquivos usados dentro de conteineres Linux: sempre LF, mesmo em clones no Windows
+deploy/** text eol=lf
+kpc-backend/Dockerfile text eol=lf
+kpc-frontend/Dockerfile text eol=lf

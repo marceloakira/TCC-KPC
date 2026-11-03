@@ -2,11 +2,12 @@
  * TopicService - Serviço responsável por operações relacionadas aos tópicos
  * Distribui as 13 APIs do grupo TOPICS do apiService.js
  */
+import { API_BASE_URL } from '../../shared/config.js';
 import { Topic } from '../entities/Topic.js';
 
 export class TopicService {
   constructor() {
-    this.apiBaseUrl = 'http://localhost:3132';
+    this.apiBaseUrl = API_BASE_URL;
   }
 
   /**

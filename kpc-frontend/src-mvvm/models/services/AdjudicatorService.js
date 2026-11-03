@@ -6,9 +6,11 @@
  *   PUT  /topic/adjudicate/{username}/{topic}/{cluster_id}/{keyphrase_id}/{action}
  *   PUT  /topic/adjudicate_and_save/{username}/{topic}/{cluster_id}/{keyphrase_id}/{action}
  */
+import { API_BASE_URL } from '../../shared/config.js';
+
 export class AdjudicatorService {
   constructor() {
-    this.apiBaseUrl = 'http://localhost:3132';
+    this.apiBaseUrl = API_BASE_URL;
   }
 
   getCurrentToken() {

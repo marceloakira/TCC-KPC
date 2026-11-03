@@ -4,6 +4,7 @@ from itertools import islice
 import numpy as np
 
 import datetime
+import os
 import shutil
 import json
 from pathlib import Path
@@ -49,7 +50,8 @@ class KeyphraseCurationFile:
         return True
 
     def get_data_from_json(self, check_consistency=True):
-        data = json.load(open(self.json_filepath))
+        with open(self.json_filepath) as f:
+            data = json.load(f)
         if check_consistency:
             if not self.is_clustering_consistent(data):
                 raise ValueError('Error: clustering not consistent')
@@ -107,8 +109,12 @@ class KeyphraseCurationFile:
                         cluster_id]
             else:
                 raise ValueError(f'Unknown annotation task: {annotation_task}')
-            with open(self.json_filepath, 'w') as f:
+            # write a temporary file and swap it in, so a crash or a backup
+            # running at the same time never sees a half-written file
+            tmp_filepath = self.json_filepath + '.tmp'
+            with open(tmp_filepath, 'w') as f:
                 json.dump(data, f, indent=4)
+            os.replace(tmp_filepath, self.json_filepath)
         except Exception as e:
             print(f'Save failed: {e}')
             return False
@@ -116,7 +122,8 @@ class KeyphraseCurationFile:
 
     def get_annotations_from_json(self, annotation_task: AnnotationTask):
         annotations = {}
-        data = json.load(open(self.json_filepath))
+        with open(self.json_filepath) as f:
+            data = json.load(f)
         if annotation_task == AnnotationTask.KEYPHRASE_CLUSTERING:
             for cluster_id in data['clusters']:
                 cluster_id = str(cluster_id)

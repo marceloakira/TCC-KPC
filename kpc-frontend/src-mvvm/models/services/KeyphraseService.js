@@ -2,11 +2,12 @@
  * KeyphraseService - Serviço responsável por operações relacionadas às keyphrases
  * Distribui as 2 APIs do grupo KEYPHRASES do apiService.js
  */
+import { API_BASE_URL } from '../../shared/config.js';
 import { Keyphrase } from '../entities/Keyphrase.js';
 
 export class KeyphraseService {
   constructor() {
-    this.apiBaseUrl = 'http://localhost:3132';
+    this.apiBaseUrl = API_BASE_URL;
   }
 
   /**

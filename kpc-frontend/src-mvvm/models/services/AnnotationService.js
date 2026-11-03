@@ -2,9 +2,11 @@
  * AnnotationService - Serviço responsável por operações relacionadas aos arquivos de anotação
  * Distribui 1 API do grupo ANNOTATION FILES + 2 APIs do grupo SYSTEM do apiService.js
  */
+import { API_BASE_URL } from '../../shared/config.js';
+
 export class AnnotationService {
   constructor() {
-    this.apiBaseUrl = 'http://localhost:3132';
+    this.apiBaseUrl = API_BASE_URL;
   }
 
   /**

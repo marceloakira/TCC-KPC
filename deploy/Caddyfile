@@ -1,0 +1,27 @@
+# SITE_ADDRESS (deploy/.env):
+#   um domínio, ex. kpc.exemplo.edu.br -> HTTPS automático (Let's Encrypt);
+#     o domínio precisa apontar para o servidor e as portas 80 e 443
+#     precisam estar abertas
+#   :80 -> só HTTP (teste, ou atrás de outro proxy que já faz o HTTPS)
+{$SITE_ADDRESS::80} {
+	encode zstd gzip
+
+	# API: /api/topic/... chega ao backend como /topic/...
+	handle_path /api/* {
+		reverse_proxy backend:3132
+	}
+
+	# Frontend: rotas do React (/topics, /clustering...) devolvem o index.html
+	handle {
+		root * /srv
+		try_files {path} /index.html
+		file_server
+	}
+
+	header {
+		X-Content-Type-Options nosniff
+		X-Frame-Options DENY
+		Referrer-Policy strict-origin-when-cross-origin
+		-Server
+	}
+}

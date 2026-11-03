@@ -1,0 +1,76 @@
+# Produção do KPC: passo a passo em deploy/README.md.
+# Rodar de dentro desta pasta:  docker compose up -d --build
+# Configuração em deploy/.env (copie de .env.example).
+
+services:
+  # Frontend (React compilado) + proxy reverso + HTTPS automático
+  web:
+    build:
+      context: ../kpc-frontend
+      args:
+        VITE_API_BASE_URL: /api
+    restart: unless-stopped
+    depends_on:
+      - backend
+    # Atrás de outro proxy (Nginx do servidor), HTTP_PORT e HTTPS_PORT
+    # publicam só em 127.0.0.1: veja .env.example
+    ports:
+      - "${HTTP_PORT:-80}:80"
+      - "${HTTPS_PORT:-443}:443"
+      - "${HTTPS_PORT:-443}:443/udp"
+    environment:
+      SITE_ADDRESS: ${SITE_ADDRESS:-:80}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data        # certificados HTTPS
+      - caddy_config:/config
+
+  # API (FastAPI); só o Caddy a acessa, nenhuma porta é publicada
+  backend:
+    build:
+      context: ../kpc-backend
+      args:
+        KPC_UID: ${KPC_UID:-1000}
+    restart: unless-stopped
+    environment:
+      SECRET_KEY: ${SECRET_KEY:?defina SECRET_KEY em deploy/.env}
+      ACCESS_TOKEN_EXPIRE_MINUTES: ${ACCESS_TOKEN_EXPIRE_MINUTES:-2880}
+      SECURITY_ALGORITHM: HS256
+      DATASET_RELATIVE_PATH: dataset
+      ATTRIBUTIONS_FILENAME: attributions.toml
+      CLUSTER_IDS_LENGTH: "33"
+      CURATED_KEYPHRASES_LENGTH: "16"
+      # frontend e API no mesmo endereço: CORS desnecessário
+      CORS_ORIGINS: ""
+      COOKIE_DOMAIN: ""
+      COOKIE_PATH: /
+      COOKIE_SECURE: ${COOKIE_SECURE:-true}
+      COOKIE_SAMESITE: lax
+      LEGACY_UI_ENABLED: "false"
+      API_DOCS_ENABLED: "false"
+    volumes:
+      - ${KPC_DATA_DIR:-./data}:/app/dataset
+    healthcheck:
+      test: ["CMD", "python", "-c",
+             "import socket; socket.create_connection(('localhost', 3132), 2)"]
+      interval: 30s
+      timeout: 5s
+      start_period: 60s
+      retries: 3
+
+  # Cópia periódica das anotações e do cadastro de usuários
+  backup:
+    image: alpine:3.20
+    restart: unless-stopped
+    entrypoint: ["sh", "/backup.sh"]
+    environment:
+      BACKUP_INTERVAL_HOURS: ${BACKUP_INTERVAL_HOURS:-6}
+      BACKUP_RETENTION_DAYS: ${BACKUP_RETENTION_DAYS:-30}
+    volumes:
+      - ${KPC_DATA_DIR:-./data}:/data:ro
+      - ${KPC_BACKUP_DIR:-./backups}:/backups
+      - ./backup.sh:/backup.sh:ro
+
+volumes:
+  caddy_data:
+  caddy_config:

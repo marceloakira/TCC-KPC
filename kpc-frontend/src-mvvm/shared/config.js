@@ -7,9 +7,11 @@
  */
 
 /**
- * URL base da API do backend KPC
+ * URL base da API do backend KPC.
+ * Em produção o build usa VITE_API_BASE_URL=/api (mesmo endereço do site,
+ * repassado ao backend pelo Caddy); no desenvolvimento, o backend local.
  */
-export const API_BASE_URL = 'http://localhost:3132';
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:3132';
 
 /**
  * Endpoints da API
