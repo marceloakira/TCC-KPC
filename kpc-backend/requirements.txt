@@ -61,6 +61,7 @@ multidict==6.6.4
 murmurhash==1.0.13
 mypy_extensions==1.1.0
 networkx==3.4.2
+nltk==3.9.1
 numpy>=1.26.0,<2.0.0
 openai==1.72.0
 packaging==25.0

@@ -38,6 +38,9 @@ export { default as AdjudicatorClusterChips } from './AdjudicatorClusterChips.js
 export { default as AdjudicatorChip } from './AdjudicatorChip.jsx';
 export { default as AdjudicatorClusters } from './AdjudicatorClusters.jsx';
 
+// Concordância entre os anotadores exibida ao adjudicator
+export { default as AdjudicatorAgreementPanel } from './AdjudicatorAgreementPanel.jsx';
+
 // ============================================================================
 // METADATA DO MÓDULO
 // ============================================================================
@@ -59,9 +62,10 @@ export const COMPONENTS_INFO = {
     'ClusterCard',
     'AdjudicatorClusterChips',
     'AdjudicatorChip',
-    'AdjudicatorClusters'
+    'AdjudicatorClusters',
+    'AdjudicatorAgreementPanel'
   ],
-  totalComponents: 9,
+  totalComponents: 10,
   lastUpdated: new Date().toISOString()
 };
 

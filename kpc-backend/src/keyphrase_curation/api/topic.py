@@ -13,6 +13,8 @@ from keyphrase_curation.model.cluster import ClusterSorting
 # @model: specs/002-pairwise-similarity-fix/model/classes.puml
 # RF: RF-003 — Conversão numpy → Python nativo no retorno da API
 from keyphrase_curation.util.json_encoder import NumpyConverter
+from keyphrase_curation.util.agreement import \
+    ARTICLE_KC_REFERENCE, kc_agreement
 
 router = APIRouter()
 
@@ -384,12 +386,18 @@ def _get_adjudicator_clusters_data(username: str, topic: str) -> dict:
       annotator1:  {clusterId: [desc, [kp...]]},
       annotator2:  {clusterId: [desc, [kp...]]},
       union:       {clusterId: [desc, [kp...]]},
+      agreement:   {complete, n_keyphrases, not_clustered, convergent,
+                    kc: {ari, ami, fms} | None, reference: {ari, ami, fms}}
+                   | None (anotadores com keyphrases diferentes),
     }
 
     Os clusters do adjudicator são lidos do arquivo de anotação do próprio
     adjudicator; os dos anotadores, dos arquivos declarados como 'sources'
     na atribuição do adjudicator (annotations/<user1>/<topic>.kpc e
     annotations/<user2>/<topic>.kpc).
+
+    agreement é a concordância de agrupamento (KC) entre os dois anotadores;
+    reference traz as médias da Tabela 3 do artigo.
     """
     uac = UserAttributionController()
     annotation_files = uac.get_annotation_files(username, topic)
@@ -400,12 +408,17 @@ def _get_adjudicator_clusters_data(username: str, topic: str) -> dict:
         raise ValueError(
             "Adjudicator attribution must have at least 2 sources")
 
-    def load_clusters(filepath: str) -> dict:
-        """Carrega clusters {cluster_id: [desc, [kp...]]} de um arquivo .kpc"""
+    def load_data(filepath: str) -> dict:
         kpc = KeyphraseCurationFile(filepath)
-        data = kpc.get_data_from_json(check_consistency=False)
+        return kpc.get_data_from_json(check_consistency=False)
+
+    def to_clusters(data: dict, mapping: dict = None) -> dict:
+        """Clusters {cluster_id: [desc, [kp...]]}, renumerados por mapping
+        ({cluster_id no arquivo: cluster_id exibido}), se informado"""
         clusters = {}
         for cluster_id, cluster in data['clusters'].items():
+            if mapping is not None:
+                cluster_id = mapping.get(int(cluster_id), int(cluster_id))
             keyphrases = [
                 f"{data['keyphrases'][str(kp_id)]['keyphrase']}({kp_id})"
                 for kp_id in cluster['keyphrases']
@@ -413,12 +426,24 @@ def _get_adjudicator_clusters_data(username: str, topic: str) -> dict:
             clusters[str(cluster_id)] = [f"Cluster {cluster_id}", keyphrases]
         return clusters
 
-    annotator1_clusters = load_clusters(
-        config['dataset_path'] + '/' + sources[0])
-    annotator2_clusters = load_clusters(
-        config['dataset_path'] + '/' + sources[1])
-    adjudicator_clusters = load_clusters(
-        uac.get_annotation_filepaths(username, topic)['target'])
+    annotator1_data = load_data(config['dataset_path'] + '/' + sources[0])
+    annotator2_data = load_data(config['dataset_path'] + '/' + sources[1])
+
+    # Anotadores independentes numeram os clusters de forma diferente:
+    # os clusters do anotador 2 são renumerados para a numeração do
+    # anotador 1 (a mesma do arquivo do adjudicator)
+    try:
+        kc = kc_agreement(
+            annotator1_data, annotator2_data, config['cluster_ids_length'])
+    except ValueError:
+        # arquivos com keyphrases diferentes: sem alinhamento nem métricas
+        kc = None
+
+    annotator1_clusters = to_clusters(annotator1_data)
+    annotator2_clusters = to_clusters(
+        annotator2_data, kc['mapping'] if kc else None)
+    adjudicator_clusters = to_clusters(load_data(
+        uac.get_annotation_filepaths(username, topic)['target']))
 
     # União das keyphrases dos dois anotadores por cluster
     union_clusters = {}
@@ -430,11 +455,28 @@ def _get_adjudicator_clusters_data(username: str, topic: str) -> dict:
             sorted(kp1.union(kp2))
         ]
 
+    agreement = None
+    if kc is not None:
+        agreement = {
+            "complete": kc['complete'],
+            "n_keyphrases": kc['n_keyphrases'],
+            "not_clustered": kc['not_clustered'],
+            "convergent": kc['convergent'],
+            "kc": None,
+            "reference": dict(ARTICLE_KC_REFERENCE),
+        }
+        if kc['kc'] is not None:
+            agreement["kc"] = {
+                metric: round(kc['kc'][metric], 2)
+                for metric in ARTICLE_KC_REFERENCE
+            }
+
     return {
         "adjudicator": adjudicator_clusters,
         "annotator1": annotator1_clusters,
         "annotator2": annotator2_clusters,
-        "union": union_clusters
+        "union": union_clusters,
+        "agreement": agreement
     }
 
 

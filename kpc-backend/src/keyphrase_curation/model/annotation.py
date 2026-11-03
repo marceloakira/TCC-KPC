@@ -221,7 +221,11 @@ class ClusterSetsMatcher:
         self.clustering2 = clustering2
 
     def jaccard_index(ksa, ksb):
-        return round(len(ksa.intersection(ksb)) / len(ksa.union(ksb)), 2)
+        union = ksa.union(ksb)
+        if not union:
+            # two empty clusters: nothing in common to match
+            return 0.0
+        return round(len(ksa.intersection(ksb)) / len(union), 2)
 
     def cluster_similarity(
             self,
