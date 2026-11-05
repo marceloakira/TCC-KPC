@@ -136,6 +136,9 @@ class AnnotationController:
         self.adjudicator_annotation.adjudicate(
             cluster_id, keyphrase_id, action)
 
+    def save_adjudication(self):
+        return self.adjudicator_annotation.save()
+
     def save(self, task):
         if task == AnnotationTask.KEYPHRASE_CLUSTERING:
             return self.cluster_annotation.save()

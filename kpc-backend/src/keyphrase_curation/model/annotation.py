@@ -221,7 +221,11 @@ class ClusterSetsMatcher:
         self.clustering2 = clustering2
 
     def jaccard_index(ksa, ksb):
-        return round(len(ksa.intersection(ksb)) / len(ksa.union(ksb)), 2)
+        union = ksa.union(ksb)
+        if not union:
+            # two empty clusters: nothing in common to match
+            return 0.0
+        return round(len(ksa.intersection(ksb)) / len(union), 2)
 
     def cluster_similarity(
             self,
@@ -510,10 +514,11 @@ class AdjudicatorAnnotation():
         if action not in ('consent', 'reject'):
             raise ValueError(f'Unknown action: {action}')
         # annotations_not_saved: {keyphrase_id: target_cluster_id}
+        # keyphrase ids must be ints, as stored in the annotation file
         if action == 'consent':
-            self.annotations_not_saved[str(keyphrase_id)] = int(cluster_id)
+            self.annotations_not_saved[int(keyphrase_id)] = int(cluster_id)
         else:
             # thrash cluster: id = cluster_ids_length (last one)
-            self.annotations_not_saved[str(keyphrase_id)] = \
+            self.annotations_not_saved[int(keyphrase_id)] = \
                 int(self.cluster_ids_length)
         return True
