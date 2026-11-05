@@ -10,6 +10,7 @@ import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { User } from '../../models/entities/User.js';
 import { AuthService } from '../../models/services/AuthService.js';
+import { SESSION_EXPIRED_EVENT } from '../../shared/http.js';
 
 const authService = new AuthService();
 
@@ -87,6 +88,16 @@ export const useAuthStore = create(
       },
 
       /**
+       * expireSession() — a API recusou o login salvo (HTTP 401): sai e
+       * avisa na tela de login. As rotas protegidas redirecionam sozinhas.
+       */
+      expireSession: () => {
+        if (!get().isAuthenticated) return;
+        get().logout();
+        set({ error: 'Sua sessão expirou. Entre novamente.' });
+      },
+
+      /**
        * clearError() — limpa mensagem de erro.
        */
       clearError: () => {
@@ -150,3 +161,7 @@ export const useAuthStore = create(
     }
   )
 );
+
+window.addEventListener(SESSION_EXPIRED_EVENT, () => {
+  useAuthStore.getState().expireSession();
+});

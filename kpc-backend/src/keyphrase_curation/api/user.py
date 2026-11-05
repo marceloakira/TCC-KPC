@@ -64,7 +64,7 @@ async def login_basic(
         password = credentials.password
         if not UserAttributionController().\
                 validate_password(username, password):
-            raise HTTPException(501, detail="Incorrect username or password")
+            raise HTTPException(401, detail="Incorrect username or password")
         return gen_response_cookie(username)
 
     except Exception:
@@ -99,7 +99,7 @@ async def login(request: Request,
                 Depends()):
     if not UserAttributionController().validate_password(
             form_data.username, form_data.password):
-        raise HTTPException(501, detail="Incorrect username or password")
+        raise HTTPException(401, detail="Incorrect username or password")
     
     # Criar token JWT
     access_token_expires = timedelta(

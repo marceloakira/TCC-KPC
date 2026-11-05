@@ -3,6 +3,7 @@
  * Distribui as 2 APIs do grupo KEYPHRASES do apiService.js
  */
 import { API_BASE_URL } from '../../shared/config.js';
+import { apiFetch } from '../../shared/http.js';
 import { Keyphrase } from '../entities/Keyphrase.js';
 
 export class KeyphraseService {
@@ -53,7 +54,7 @@ export class KeyphraseService {
       ...options
     };
 
-    const response = await fetch(url, config);
+    const response = await apiFetch(url, config);
     
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));

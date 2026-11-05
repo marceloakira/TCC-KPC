@@ -7,6 +7,7 @@
  *   PUT  /topic/adjudicate_and_save/{username}/{topic}/{cluster_id}/{keyphrase_id}/{action}
  */
 import { API_BASE_URL } from '../../shared/config.js';
+import { apiFetch } from '../../shared/http.js';
 
 export class AdjudicatorService {
   constructor() {
@@ -40,7 +41,7 @@ export class AdjudicatorService {
       headers: { ...defaultHeaders, ...options.headers },
       ...options,
     };
-    const response = await fetch(url, config);
+    const response = await apiFetch(url, config);
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
       throw new Error(

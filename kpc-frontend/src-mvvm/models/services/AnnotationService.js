@@ -3,6 +3,7 @@
  * Distribui 1 API do grupo ANNOTATION FILES + 2 APIs do grupo SYSTEM do apiService.js
  */
 import { API_BASE_URL } from '../../shared/config.js';
+import { apiFetch } from '../../shared/http.js';
 
 export class AnnotationService {
   constructor() {
@@ -52,7 +53,7 @@ export class AnnotationService {
       ...options
     };
 
-    const response = await fetch(url, config);
+    const response = await apiFetch(url, config);
     
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));

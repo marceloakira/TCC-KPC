@@ -8,6 +8,7 @@
  */
 import { User } from '../entities/User.js';
 import { API_BASE_URL, ENDPOINTS } from '../../shared/config.js';
+import { apiFetch } from '../../shared/http.js';
 
 export class AuthService {
   constructor() {
@@ -38,7 +39,7 @@ export class AuthService {
     if (token) defaultHeaders['Authorization'] = `Bearer ${token}`;
 
     const config = { headers: { ...defaultHeaders, ...options.headers }, ...options };
-    const response = await fetch(url, config);
+    const response = await apiFetch(url, config);
 
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));

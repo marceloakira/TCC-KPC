@@ -3,6 +3,7 @@
  * Distribui as 2 APIs do grupo CLUSTERS do apiService.js
  */
 import { API_BASE_URL } from '../../shared/config.js';
+import { apiFetch } from '../../shared/http.js';
 import { Cluster } from '../entities/Cluster.js';
 import { Keyphrase } from '../entities/Keyphrase.js';
 
@@ -75,7 +76,7 @@ export class ClusterService {
       ...options
     };
 
-    const response = await fetch(url, config);
+    const response = await apiFetch(url, config);
     
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));

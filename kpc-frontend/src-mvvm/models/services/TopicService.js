@@ -3,6 +3,7 @@
  * Distribui as 13 APIs do grupo TOPICS do apiService.js
  */
 import { API_BASE_URL } from '../../shared/config.js';
+import { apiFetch } from '../../shared/http.js';
 import { Topic } from '../entities/Topic.js';
 
 export class TopicService {
@@ -54,7 +55,7 @@ export class TopicService {
       ...options
     };
 
-    const response = await fetch(url, config);
+    const response = await apiFetch(url, config);
     
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
@@ -304,7 +305,7 @@ export class TopicService {
   async getAdjudicatorData(username, topicName) {
     try {
       
-      const response = await fetch(`${this.apiBaseUrl}/topic/adjudicator_data/${encodeURIComponent(username)}/${encodeURIComponent(topicName)}`, {
+      const response = await apiFetch(`${this.apiBaseUrl}/topic/adjudicator_data/${encodeURIComponent(username)}/${encodeURIComponent(topicName)}`, {
         method: 'GET',
         // NOTA: sem credentials:'include' — o backend usa CORS allow_origins=*,
         // que é rejeitado pelo browser quando credentials estão incluídas.
@@ -335,7 +336,7 @@ export class TopicService {
   async getAnnotatorActions(username, topicName) {
     try {
       
-      const response = await fetch(`${this.apiBaseUrl}/topic/annotator_actions/${encodeURIComponent(username)}/${encodeURIComponent(topicName)}`, {
+      const response = await apiFetch(`${this.apiBaseUrl}/topic/annotator_actions/${encodeURIComponent(username)}/${encodeURIComponent(topicName)}`, {
         method: 'GET',
         headers: {
           'Accept': 'application/json',
@@ -364,7 +365,7 @@ export class TopicService {
   async setAdjudicatorAction(username, topicName, clusterId, keyphraseId, action) {
     try {
 
-      const response = await fetch(`${this.apiBaseUrl}/topic/adjudicate_and_save/${encodeURIComponent(username)}/${encodeURIComponent(topicName)}/${clusterId}/${keyphraseId}/${action}`, {
+      const response = await apiFetch(`${this.apiBaseUrl}/topic/adjudicate_and_save/${encodeURIComponent(username)}/${encodeURIComponent(topicName)}/${clusterId}/${keyphraseId}/${action}`, {
         method: 'PUT',
         headers: {
           'Accept': 'application/json',

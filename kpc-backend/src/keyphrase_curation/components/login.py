@@ -70,7 +70,7 @@ def LoginAPI():
             )
         )
 
-    if http_status == 501:
+    if http_status == 401:
         return html.div(
             login_form(error=True)
         )
