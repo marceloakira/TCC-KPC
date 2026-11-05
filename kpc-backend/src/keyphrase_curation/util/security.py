@@ -7,8 +7,9 @@ from fastapi.openapi.models import OAuthFlows as OAuthFlowsModel
 from fastapi.security import HTTPBasic, OAuth2
 from fastapi.security.utils import get_authorization_scheme_param
 from jose import jwt
+from jose.exceptions import ExpiredSignatureError, JWTError
 from passlib.context import CryptContext
-from starlette.status import HTTP_403_FORBIDDEN
+from starlette.status import HTTP_401_UNAUTHORIZED
 from keyphrase_curation import config
 
 
@@ -35,6 +36,13 @@ class Token(BaseModel):
 
 class TokenData(BaseModel):
     username: str
+
+
+def unauthorized(detail: str):
+    '''Login missing, invalid or expired: 401, which makes the frontend go
+    back to the login page. 403 stays for "logged in, but not allowed".'''
+    return HTTPException(status_code=HTTP_401_UNAUTHORIZED, detail=detail,
+                         headers={"WWW-Authenticate": "Bearer"})
 
 
 class OAuth2PasswordBearerCookie(OAuth2):
@@ -80,9 +88,7 @@ class OAuth2PasswordBearerCookie(OAuth2):
 
         if not authorization or scheme.lower() != "bearer":
             if self.auto_error:
-                raise HTTPException(
-                    status_code=HTTP_403_FORBIDDEN, detail="Not authenticated"
-                )
+                raise unauthorized("Not authenticated")
             else:
                 return None
         return param
@@ -124,30 +130,15 @@ def get_user_from_scope(scope: dict):
 
 
 async def get_current_user(token: str = Depends(oauth2_scheme)):
-    credentials_exception = HTTPException(
-        status_code=HTTP_403_FORBIDDEN,
-        detail="Could not validate credentials"
-    )
     try:
+        # jwt.decode also rejects tokens whose "exp" has passed
         payload = jwt.decode(
             token, SECRET_KEY, algorithms=[SECURITY_ALGORITHM])
-        username = ''
-        if payload is not None:
-            username: str = payload.get("sub")  # type: ignore
-        if username == '' or username is None:
-            raise credentials_exception
-        exp = payload.get('exp')
-        if not exp:
-            raise HTTPException(status_code=401, detail="Invalid token")
-        now = datetime.now()
-        if int(exp) < int(now.timestamp()):
-            raise HTTPException(status_code=440, detail="Token expired")
-        token_data = TokenData(username=username)
-    except Exception as e:
-        if e.__class__.__name__ == 'ExpiredSignatureError':
-            raise HTTPException(status_code=440, detail="Token expired")
-        raise credentials_exception
-    user = token_data.username
-    if user is None:
-        raise credentials_exception
-    return user
+    except ExpiredSignatureError:
+        raise unauthorized("Token expired")
+    except JWTError:
+        raise unauthorized("Could not validate credentials")
+    username = payload.get("sub")
+    if not username or not payload.get("exp"):
+        raise unauthorized("Could not validate credentials")
+    return username

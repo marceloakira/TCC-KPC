@@ -49,3 +49,7 @@ kpc-backend/dataset/annotations/new/
 
 # Lockfiles de especificação
 .specify/*.lock
+
+# Deploy: dados e backups do servidor
+deploy/data/
+deploy/backups/

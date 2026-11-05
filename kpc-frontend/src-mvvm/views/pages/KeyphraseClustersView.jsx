@@ -18,7 +18,7 @@ import {
   Paper
 } from '@mui/material';
 import { MainLayout } from '../layouts/index.js';
-import { Button, AdjudicatorClusters } from '../components/index.js';
+import { Button, AdjudicatorClusters, AdjudicatorAgreementPanel } from '../components/index.js';
 import { ClusterSorting, ClusterSortingLabels } from '../../shared/enums/ClusterSorting.js';
 
 /**
@@ -284,10 +284,13 @@ const KeyphraseClustersView = ({
         adjudicatorData.union &&
         Object.keys(adjudicatorData.union).length > 0) {
       return (
-        <AdjudicatorClusters
-          clustersAnnotationData={adjudicatorData}
-          onAdjudicatorAction={onAdjudicatorAction}
-        />
+        <>
+          <AdjudicatorAgreementPanel agreement={adjudicatorData.agreement} />
+          <AdjudicatorClusters
+            clustersAnnotationData={adjudicatorData}
+            onAdjudicatorAction={onAdjudicatorAction}
+          />
+        </>
       );
     }
 

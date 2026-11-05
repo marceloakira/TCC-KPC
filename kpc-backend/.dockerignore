@@ -18,8 +18,9 @@ __pycache__/
 htmlcov/
 .ipynb_checkpoints/
 
-dataset/attributions.toml
-dataset/annotations/tests/
+# dados ficam fora da imagem (volume em producao, montados no launcher)
+dataset/
+_*/
 run.log
 *.sqlite
 *_ne.sql

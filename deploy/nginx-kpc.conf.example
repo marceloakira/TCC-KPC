@@ -1,0 +1,23 @@
+# Nginx na frente do KPC, para servidores em que o Nginx já ocupa as
+# portas 80/443 (README, "Servidor que já usa o Nginx").
+# Troque kpc.exemplo.edu.br pelo endereço do site em server_name e:
+#   sudo cp nginx-kpc.conf.example /etc/nginx/sites-available/kpc.exemplo.edu.br
+#   sudo ln -s /etc/nginx/sites-available/kpc.exemplo.edu.br /etc/nginx/sites-enabled/
+#   sudo nginx -t
+#   sudo systemctl reload nginx
+#   sudo certbot --nginx -d kpc.exemplo.edu.br
+# O certbot acrescenta o HTTPS e o redirecionamento de HTTP para HTTPS.
+server {
+    listen 80;
+    listen [::]:80;
+    server_name kpc.exemplo.edu.br;
+
+    location / {
+        # Caddy do docker-compose (HTTP_PORT=127.0.0.1:8081 no deploy/.env)
+        proxy_pass http://127.0.0.1:8081;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}

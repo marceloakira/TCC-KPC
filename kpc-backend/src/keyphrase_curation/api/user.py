@@ -15,6 +15,18 @@ router = APIRouter()
 oauth2_scheme = OAuth2PasswordBearerCookie(tokenUrl="/users/token")
 
 
+def cookie_options():
+    '''Attributes of the login cookie (legacy interface and API docs).
+    An empty COOKIE_DOMAIN makes the cookie valid only for the host that
+    set it.'''
+    return {
+        "domain": config.get('COOKIE_DOMAIN') or None,
+        "secure": config['cookie_secure'],
+        "samesite": config['cookie_samesite'],
+        "httponly": True,
+    }
+
+
 def gen_response_cookie(username: str, redirect: str = "/api/docs"):
     access_token_expires = timedelta(
         minutes=int(config['ACCESS_TOKEN_EXPIRE_MINUTES']))
@@ -23,7 +35,6 @@ def gen_response_cookie(username: str, redirect: str = "/api/docs"):
     )
 
     token = jsonable_encoder(access_token)
-    domain = config['COOKIE_DOMAIN']
     if redirect is None:
         response = Response(
             headers={"WWW-Authenticate": "Basic"}, status_code=200)
@@ -32,10 +43,9 @@ def gen_response_cookie(username: str, redirect: str = "/api/docs"):
     response.set_cookie(
         "Authorization",
         value=f"Bearer {token}",
-        domain=domain,
-        httponly=True,
         max_age=14400,
         expires=14400,
+        **cookie_options(),
     )
     return response
 
@@ -54,7 +64,7 @@ async def login_basic(
         password = credentials.password
         if not UserAttributionController().\
                 validate_password(username, password):
-            raise HTTPException(501, detail="Incorrect username or password")
+            raise HTTPException(401, detail="Incorrect username or password")
         return gen_response_cookie(username)
 
     except Exception:
@@ -65,9 +75,8 @@ async def login_basic(
 @router.get("/logout")
 @router.get("/logout/", include_in_schema=False)
 async def logout(request: Request):
-    domain = config['COOKIE_DOMAIN']
     response = RedirectResponse(url="/users/login")
-    response.delete_cookie("Authorization", domain=domain)
+    response.delete_cookie("Authorization", **cookie_options())
     return response
 
 
@@ -82,14 +91,7 @@ async def list_users(user: str = Depends(get_current_user)):
 async def whoami(user: str = Depends(get_current_user)):
     return {"username": user}
 
-@router.get("/validate_password")
-async def get_validate_password(username: str, password: str):
-    try:
-        is_valid = UserAttributionController().validate_password(username, password)
-        return is_valid
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-    
+
 @router.post("/login")
 @router.post("/login/", include_in_schema=False)
 async def login(request: Request,
@@ -97,7 +99,7 @@ async def login(request: Request,
                 Depends()):
     if not UserAttributionController().validate_password(
             form_data.username, form_data.password):
-        raise HTTPException(501, detail="Incorrect username or password")
+        raise HTTPException(401, detail="Incorrect username or password")
     
     # Criar token JWT
     access_token_expires = timedelta(
